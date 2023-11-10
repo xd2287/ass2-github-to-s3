@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photo Album</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- api gateway generated sdk -->
+    <script src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+
+    <script src="./assets/js/sdk/apigClient.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>My Photo Album</h1>
+    </header>
+
+    <section class="upload-area">
+        <h2>Upload a Photo</h2>
+        <form id="uploadForm">
+            <input type="file" id="photoUpload" name="photo" accept="image/*">
+            <input type="text" id="photoLabels" placeholder="Add custom label (optional; use comma to separate multiple labels if needed)">
+            <button type="button" id="uploadButton">Upload Photo</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section class="search-area">
+        <h2>Search Photos</h2>
+        <input type="text" id="searchInput" placeholder="Enter search query or use voice search">
+        <button type="button" id="searchButton">Search</button>
+        <button type="button" id="startVoiceSearchButton">🎤 Start Talking</button>
+        <button type="button" id="stopVoiceSearchButton" style="display:none;">Stop Talking</button>
+        <span id="timer" style="margin-left: 10px;"></span>
+    </section>
+
+    <div class="photo-gallery" id="photoGallery">
+        <!-- Photos will be displayed here -->
+    </div>
+
+    <script>
+        var sdk = apigClientFactory.newClient({});
+    </script>
+    
+    <script src="upload.js"></script>
+    <script src="voiceToText.js"></script>
+    <script src="search.js"></script>
+
+</body>
+</html>

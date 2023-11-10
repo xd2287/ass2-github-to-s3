@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #005f6b;
+    margin-bottom: 20px;
+  }
+  
+  .upload-area, .search-area {
+    margin-bottom: 20px;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin-bottom: 20px;
+  }
+  
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .photo-item {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .photo-item img:hover {
+    transform: scale(1.1);
+  }
+
+  .photo-label {
+    text-align: center;
+    padding: 5px;
+    font-size: 0.9em;
+    color: #666;
+  }
+
+  input[type="text"]#photoLabels {
+    width: 35%; /* Make the input field full width */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    margin-top: 10px; /* Add some space above the input field */
+  }
+  
+  input[type="file"], input[type="text"], button {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  input[type="text"] {
+    width: 200px;
+  }
+  
+  button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #005f6b;
+  }
+  
+  @media (max-width: 600px) {
+    .photo-gallery {
+      grid-template-columns: 1fr;
+    }
+  
+    input[type="text"] {
+      width: auto;
+    }
+  }
+  
+  button#startVoiceSearchButton, button#stopVoiceSearchButton {
+    padding: 10px;
+    margin-left: 5px;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button#startVoiceSearchButton:hover, button#stopVoiceSearchButton:hover {
+    background-color: #d32f2f;
+  }
+
+  input[type="text"]#searchInput {
+    width: 35%; /* Make the input field full width */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    margin-top: 10px; /* Add some space above the input field */
+  }
+
+  .photo-item {
+    width: 20%; /* Set the width to 25% for each photo (four photos per line) */
+    margin: 5px; /* Add margin for spacing between photos */
+    display: inline-block; /* Display images in a row */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.photo-gallery {
+  display: block;
+}
+
+.photo-row {
+  clear: both; /* Clear floats to start a new row */
+  display: inline-block;
+  width: 100%;
+  margin: 10px;
+}
